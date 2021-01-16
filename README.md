@@ -22,26 +22,26 @@ git remote -v
 如果是这样：  
 
 ```
-origin https://github.com/tywei90/git-auto-commit.git (fetch)  
-origin https://github.com/tywei90/git-auto-commit.git (push)  
+origin https://github.com/BlueskyClouds/git-auto-commit.git (fetch)  
+origin https://github.com/BlueskyClouds/git-auto-commit.git (push)  
 ```
 那么就是https方式； 
 
 如果是这样：  
 
 ```
-origin	git@github.com:tywei90/git-auto-commit.git (fetch)  
-origin	git@github.com:tywei90/git-auto-commit.git (push)  
+origin	git@github.com:BlueskyClouds/git-auto-commit.git (fetch)  
+origin	git@github.com:BlueskyClouds/git-auto-commit.git (push)  
 ```
 那么就是ssh方式。  
 
 更改克隆方式也很简单：  
 
 https ——> ssh  
-`git remote set-url origin git@github.com:tywei90/git-auto-commit.git`
+`git remote set-url origin git@github.com:BlueskyClouds/git-auto-commit.git`
 
 ssh ——> https  
-`git remote set-url origin https://github.com/tywei90/git-auto-commit.git`
+`git remote set-url origin https://github.com/BlueskyClouds/git-auto-commit.git`
 
 ## 第二步：免密登录
 如果不做免密登录,每次操作都需要输入用户名和密码.很麻烦.
@@ -121,11 +121,11 @@ cron是一个Linux下的后台进程，用来定期的执行一些任务.
 然后粘贴如下代码：
 
 ```bash
-00 12 * * * cd /home/time-commit && git pull && /root/.nvm/versions/node/v6.6.0/bin/node add.js && git commit -a -m 'git auto commit' && git push origin master 
+00 12 * * * cd /home/time-commit && git pull && /usr/bin/node add.js && git commit -a -m 'git auto commit' && git push origin master 
 ```
 * `00 12 * * *`的意思是，每天的12:00执行后面的命令。  
 
-* `/root/.nvm/versions/node/v6.6.0/bin/node`是node二进制执行文件的绝对路径，不能直接写node命令，不会识别的。如何查出自己的node执行目录，其实很简单，执行`which node`即可。
+* `/usr/bin/node`是node二进制执行文件的绝对路径，不能直接写node命令，不会识别的。如何查出自己的node执行目录，其实很简单，执行`which node`即可。
 
 * `'git auto commit'`是每次提交的comment，可以随意发挥.
 
