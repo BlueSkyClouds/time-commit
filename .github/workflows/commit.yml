@@ -7,6 +7,7 @@ name: Github Actions Commit
 # CRON_TIME: '00 00 * * *'
 
 on:
+  workflow_dispatch:
   schedule:  # Everday
     - cron: '00 00 * * *'
   repository_dispatch:  # For requests bassed commit
