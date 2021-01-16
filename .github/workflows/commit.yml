@@ -1,0 +1,39 @@
+name: Github Actions Commit
+
+#  Replase the fallowing according to your needs
+# GITHUB_USERNMAE: 'BlueSkyClouds'
+# GITHUB_REPO: 'time-commit'
+#
+# CRON_TIME: '00 00 * * *'
+
+on:
+  schedule:  # Everday
+    - cron: '00 00 * * *'
+  repository_dispatch:  # For requests bassed commit
+    types: start_action  # <<< WORK HERE
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Getting the repo
+      uses: actions/checkout@v2
+
+    - name: Re setting the url for `origin`
+      run: |
+        git remote set-url origin https://BlueSkyClouds:${{ secrets.GITHUB_TOKEN }}@github.com/BlueSkyClouds/time-commit.git
+
+    - name: Adding git info
+      run: |
+        git config --global user.name "BlueSkyClouds"
+#        git config --global user.email "${{ secrets.EMAIL }}"  # Added email in secrets
+
+
+    - name: Creating an empty commit 
+      run: |
+        git commit --allow-empty -m "My amazing commit"
+    
+    - name: Finilly pushing the repo
+      run: |
+        git push origin master
