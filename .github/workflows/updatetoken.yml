@@ -57,4 +57,4 @@ jobs:
         CLIENT_ID_n: ${{ secrets.CLIENT_ID_n }}
         CLIENT_SECRET_n: ${{ secrets.CLIENT_SECRET_n }}
       run: |
-        python updatetoken.py
+        python e5/updatetoken.py
