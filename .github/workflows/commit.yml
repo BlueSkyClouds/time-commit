@@ -24,7 +24,7 @@ jobs:
 
     - name: Re setting the url for `origin`
       run: |
-        git remote set-url origin https://${{ github.event.owner.login }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.event.repository.full_name }}.git
+        git remote set-url origin ${{ github.event.repository.clone_url }}
 
     - name: Adding git info
       run: |
