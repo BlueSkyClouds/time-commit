@@ -9,7 +9,7 @@ jobs:
   del_workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: Delete workflow runs
+      - name: 删除workflows日志
         uses: GitRML/delete-workflow-runs@main
         with:
-          retain_days: '3'
+          retain_days: '7'
