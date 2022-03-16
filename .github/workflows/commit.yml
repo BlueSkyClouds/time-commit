@@ -24,14 +24,11 @@ jobs:
 
     - name: Re setting the url for `origin`
       run: |
-        git remote set-url origin ${{ github.event.repository.clone_url }}
-
+        git remote set-url origin https://BlueSkyClouds:${{ secrets.GITHUB_TOKEN }}@github.com/BlueSkyClouds/time-commit.git
     - name: Adding git info
       run: |
         git config --global user.name "BlueSkyClouds"
         git config --global user.email "${{ secrets.EMAIL }}"  # Added email in secrets
-
-
     - name: Creating an empty commit 
       run: |
         git commit --allow-empty -m "My amazing commit"
