@@ -1,3 +1,9 @@
+# time-commit
+
+[![Auto Api Pro](https://github.com/BlueSkyClouds/time-commit/actions/workflows/autoapi.yml/badge.svg?branch=master)](https://github.com/BlueSkyClouds/time-commit/actions/workflows/autoapi.yml)
+[![Update Token](https://github.com/BlueSkyClouds/time-commit/actions/workflows/updatetoken.yml/badge.svg?branch=master)](https://github.com/BlueSkyClouds/time-commit/actions/workflows/updatetoken.yml)
+[![Github Actions Commit](https://github.com/BlueSkyClouds/time-commit/actions/workflows/commit.yml/badge.svg?branch=master)](https://github.com/BlueSkyClouds/time-commit/actions/workflows/commit.yml)
+
 ## 第一步：克隆我的项目
 
 不同的克隆方式导致校验方式不同，对应的免秘方式也不一样。简单来说，https通过记住账号密码免登，ssh通过校验生成的密钥免登。
