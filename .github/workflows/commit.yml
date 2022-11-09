@@ -16,7 +16,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id || github.actor == 'BlueSkyClouds'
+    if: github.event.repository.owner.id == github.event.sender.id || !github.event.sender.id || github.actor == 'BlueSkyClouds'
+    timeout-minutes: 3
 
     steps:
     - name: Getting the repo
